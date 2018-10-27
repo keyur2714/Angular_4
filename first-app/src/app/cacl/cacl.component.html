@@ -1,0 +1,14 @@
+<div class="row form-group">
+  <div class="col">Enter Any Name : </div>
+  <div class="col"><input type=text name="name" class="form-control" #name /></div>
+</div>
+<div class="row form-group">
+  <div class="col">
+    <button class="btn btn-info" (click)="reverseString(name.value)">Reverse</button>
+  </div>
+</div>
+<div class="row form-group">
+  <div>
+    <label>Reverse String is {{revStr}}</label>
+  </div>
+</div>
