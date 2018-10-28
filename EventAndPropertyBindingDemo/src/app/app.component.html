@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header bg-info">
+      <h1>{{title}}</h1>
+    </div>
+    <div class="card-body bg-default">
+      <div class="row form-group">
+        <div class="col-md-4">
+          <label>Number 1:</label>
+        </div>
+        <div class="col-md-4">
+          <input type=text #num1 class="form-control" (keyup)="getNum1Value(num1.value)" (blur)="getFullValue(num1.value)"/>
+        </div>  
+      </div>
+      <div class="row form-group">
+        <div class="col-md-4">
+          <label>Number 2:</label>
+        </div>
+        <div class="col-md-4">
+          <input type=text #num2 class="form-control" (keyup)="getNum1Value(num2.value)" (blur)="getFullValue(num2.value)"/>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col">
+          <button  class="btn btn-success" [disabled]="num1.value == ''" (click)="add(num1.value,num2.value)">+</button>
+        </div>
+        <div class="col">
+          <button  class="btn btn-success" [disabled]="num1.value == ''" (click)="sub(num1.value,num2.value)">-</button>
+        </div>
+        <div class="col">
+          <button  class="btn btn-success" [disabled]="num1.value == ''" (click)="mul(num1.value,num2.value)">*</button>
+        </div>
+        <div class="col">
+          <button  class="btn btn-success" [disabled]="num1.value == ''" (click)="div(num1.value,num2.value)">/</button>
+        </div>
+      </div>     
+      <div class="row">
+        <div class="col">
+            Result is: 
+            <input type=text #res [value]="result" readonly />
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
