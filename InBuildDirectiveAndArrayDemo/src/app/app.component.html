@@ -1,0 +1,24 @@
+<h1>
+{{title}}
+</h1>
+{{name}}
+{{friendNameList.length}}
+{{friendNameList}}
+
+<ul *ngFor="let nm of friendNameList;let i=index">  
+  <li *ngIf="nm !== 'vinit'">{{nm}} ===> {{i}}</li>  
+</ul>
+
+<table>
+  <tr>
+    <th>Roll No</th> 
+  </tr>
+  <tr *ngFor="let rollNo of rollNoList">
+    <td>{{rollNo}}</td>
+  </tr>
+</table>
+
+<div *ngFor="let emp of employeeList">
+  <span>{{emp.name}}</span>&nbsp;
+  <span>{{emp.dept}}</span>
+</div>
