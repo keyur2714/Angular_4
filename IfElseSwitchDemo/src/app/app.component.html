@@ -1,0 +1,39 @@
+<h1>{{title}}</h1>
+<h3>Angular 2 Way...</h3>
+<div *ngIf="age >= 18">
+    You are Eligible for Voting...!
+</div>
+
+<div *ngIf="age < 18">
+    You are Not Eligible for Voting...!
+</div>
+
+<h3>Angular 4 Way...</h3>
+
+<div *ngIf="age >=18 then ifBlock else elseBlock"></div>
+<ng-template #ifBlock>
+  You are Eligible for Voting...!
+</ng-template>  
+<ng-template #elseBlock>
+  You are Not Eligible for Voting...!
+</ng-template>
+
+<button (click)="calculateGrade()">Calculate Grade</button>
+
+<div [ngSwitch]="grade">
+  <span *ngSwitchCase="'Distinction'" [ngClass]="'dist'">
+    Your Grade is Distinctions : A+
+  </span>
+  <span *ngSwitchCase="'First'" [ngClass]="cssClassName">
+    Your Grade is Distinctions : A
+  </span>
+  <span *ngSwitchCase="'Second'" [ngClass]="cssClassName">
+    Your Grade is Distinctions : B
+  </span>
+  <span *ngSwitchCase="'PASS'" [ngClass]="cssClassName">
+    Your Grade is Distinctions : C
+  </span>
+  <span *ngSwitchCase="'Fail'" [ngClass]="'fail'">
+    Your Grade is Distinctions : F
+  </span>
+</div>

@@ -1,0 +1,15 @@
+.dist{
+    color: green;
+}
+.first{
+    color: blue;
+}
+.second{
+    color: yellow;
+}
+.pass{
+    color: orangered;
+}
+.fail{
+    color: red;
+}
