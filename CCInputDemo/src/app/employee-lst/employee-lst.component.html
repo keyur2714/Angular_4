@@ -1,0 +1,24 @@
+<!-- <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>EmpId</th> 
+      <th>Name</th>
+      <th>Dept Name</th>
+      <th>Salary</th>
+    </tr>    
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of empList">
+      <td>{{employee.empId}}</td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.deptName}}</td>
+      <td>{{employee.salary}}</td>
+    </tr>
+  </tbody>
+</table> -->
+<app-custome-grid 
+  [columnHeaderList]="headerList"
+  [columnList]="columnList"
+  [dataList]="empList"
+>
+</app-custome-grid>

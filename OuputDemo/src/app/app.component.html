@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<app-message 
+    [msg]="'Hey Good Morning...!'"
+    (getFormattedMsg)="getMessage($event)"
+>
+</app-message>
+
+<p>
+  Formatted Message is : {{fromattedMessage}}
+</p>
+
+<app-stringoperation (reverseString)="getRevStr($event)">
+</app-stringoperation>
+
+<p>
+  Reverse String is : {{revStr}}
+</p>
