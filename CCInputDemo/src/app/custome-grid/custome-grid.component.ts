@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-custome-grid',
@@ -15,10 +15,16 @@ export class CustomeGridComponent implements OnInit {
 
   @Input()
   dataList: any[] = [];
+
+  @Output()
+  getSelectedRow = new EventEmitter<any>();
   
   constructor() { }
 
   ngOnInit() {
   }
 
+  selectedRow(data){
+    this.getSelectedRow.emit(data);
+  }
 }

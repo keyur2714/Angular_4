@@ -7,7 +7,7 @@
     </tr>    
   </thead>
   <tbody>
-    <tr *ngFor="let data of dataList">
+    <tr *ngFor="let data of dataList" (click)="selectedRow(data)">
       <td *ngFor="let column of columnList">
         {{data[column]}}
       </td>      

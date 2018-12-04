@@ -20,5 +20,9 @@
   [columnHeaderList]="headerList"
   [columnList]="columnList"
   [dataList]="empList"
+  (getSelectedRow)="getSelectedRow($event)"
 >
 </app-custome-grid>
+<p>
+Selected Employee is :: {{selectedEmployee | json}}
+</p>

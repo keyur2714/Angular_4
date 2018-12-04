@@ -18,6 +18,8 @@ export class EmployeeLstComponent implements OnInit {
     }
   ];
 
+  selectedEmployee: Employee = new Employee();
+
   constructor() { }
 
   ngOnInit() {
@@ -37,4 +39,7 @@ export class EmployeeLstComponent implements OnInit {
     this.empList.push(employee2);
   }
 
+  getSelectedRow(data){
+    this.selectedEmployee = data;
+  }
 }
