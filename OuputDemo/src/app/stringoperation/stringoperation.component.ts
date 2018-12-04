@@ -20,7 +20,8 @@ export class StringoperationComponent implements OnInit {
     console.log(str.split(""));
     console.log(str.split("").reverse());
     console.log(str.split("").reverse().join());
-    let revStr = str.split("").reverse().join('');
+    let revStr = str.split("").reverse().join(''
+  );
     this.revStr.emit(revStr);
   }
 
