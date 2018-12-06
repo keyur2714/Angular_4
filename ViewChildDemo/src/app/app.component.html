@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<input type=text #str />
+
+<button (click)="upperCase()">Convert To Upper Case</button>
+<button (click)="lowerCase()">Convert To Lower Case</button>
+<button (click)="reverseStr()">Convert To Reverse String</button>
+
+<button (click)="save()">Submit</button>
+<p #result>
+  Input String is : {{inputString}}
+</p>
+
+<app-string-util>
+  {{resultString}}
+</app-string-util>
+
+
