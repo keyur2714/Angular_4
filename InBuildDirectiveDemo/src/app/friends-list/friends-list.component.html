@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+        {{friendName}}
+    </div>
+    <div class="col-md-6">
+        {{friendsList}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-striped">
+        <tr>
+          <th>FriendName</th>
+        </tr>
+        <tr *ngFor="let friend of friendsList" (click)="setSelectedFriend(friend)" [class.selected]="selectedFriend === friend">
+          <td *ngIf="friend !== 'keyur'">{{friend}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-4">
+      Selected Friend is : {{selectedFriend}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      {{person.pid}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped">
+         <tr>
+           <th>EmpId</th>
+           <th>Name</th>
+           <th>Dept</th>
+           <th>Salary</th>
+         </tr> 
+         <tr *ngFor="let emp of employeeList">
+           <td>{{emp.empId}}</td>
+           <td>{{emp.name}}</td>
+           <td>{{emp.deptName}}</td>
+           <td>{{emp.salary}}</td>
+         </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+.selected{
+    color: goldenrod;
+    border: 1px solid red;
+    background: blueviolet;
+}
