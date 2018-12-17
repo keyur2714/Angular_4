@@ -5,7 +5,7 @@ import { Directive , ElementRef,OnInit,Input } from '@angular/core';
 })
 export class MyColorDirective implements OnInit{
 
-  @Input()
+  @Input("yourColor")
   color: string = 'green';
 
   @Input()

@@ -1,0 +1,28 @@
+<h1>
+  {{title}}
+</h1>
+
+<div *appMyIf="true">
+  Good Morning...
+</div>
+
+<div *appMyIf="false">
+  Good Afternoon...
+</div>
+
+<ng-template [appMyIf]="true">
+  Good Morning...!!!
+</ng-template>
+<ng-template [appMyIf]="false">
+  Good Afternoon...!!!
+</ng-template>
+
+<div *appMyLoop="10">
+  Hello Radhe Krishna...!
+</div>
+
+<ng-template [appMyLoop]="3">
+  <div>
+    Jai Shree Ram...!
+  </div>
+</ng-template>
