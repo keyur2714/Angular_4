@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="card-header bg-warning">Course Entry</div>
+  <div class="card-body bg-dark text-white">
+    <div class="row form-group" *ngIf="msg !== ''">     
+      <div class="col">
+        <span class="alert alert-success">{{msg}}</span>
+      </div>
+    </div>
+    <form #frm=ngForm (ngSubmit)="save(frm)">
+      <div class="row form-group">
+        <div class="col-md-2"><label>Course Id: </label></div>
+        <div class="col-md-4"><input class="form-control" type=number name=id [(ngModel)]="course.id" #id=ngModel required/></div>
+        <div class="col-md-4" *ngIf="id.invalid && id.touched">
+          Course Id is Required field.
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Course Name: </label></div>
+        <div class="col-md-4"><input class="form-control" type=text name=courseName [(ngModel)]="course.courseName" #courseName=ngModel required minlength="3"/></div>        
+        <div class="col-md-4" *ngIf="courseName.invalid && courseName.touched && courseName.errors['required']">
+          Course Name is Required field.
+        </div>        
+        <div class="col-md-4" *ngIf="courseName.invalid && courseName.touched && courseName.errors['minlength']">
+          Course Name is Min 3 char.
+        </div>        
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Fees: </label></div>
+        <div class="col-md-4"><input class="form-control" type=text name=fees [(ngModel)]="course.fees" #fees=ngModel required/></div>
+        <div class="col-md-4" *ngIf="fees.invalid && fees.touched">
+          Course Fees is Required field.
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Trainer Name: </label></div>
+        <div class="col-md-4"><input class="form-control" type=text name=trainerName [(ngModel)]="course.trainerName"/></div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Course Duration (Weeks): </label></div>
+        <div class="col-md-4"><input class="form-control" type=text name=duration [(ngModel)]="course.duration"/></div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-info" [disabled]="frm.invalid">Save</button>
+          &nbsp;
+          <button type="button" class="btn btn-default" (click)="reset(frm)">Reset</button>
+        </div>                
+      </div>
+    </form>
+  </div>
+</div>
