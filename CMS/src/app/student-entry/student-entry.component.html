@@ -1,0 +1,62 @@
+<div class="card">
+  <div class="card-header bg-warning">Student Entry</div>
+  <div class="card-body bg-dark text-white">
+    <div class="row form-group" *ngIf="msg !== ''">     
+      <div class="col">
+        <span class="alert alert-success">{{msg}}</span>
+      </div>
+    </div>
+    <form [formGroup]="studentForm" (ngSubmit)="save()">
+      <div class="row form-group">
+        <div class="col-md-2"><label>Name: </label></div>
+        <div class="col-md-4"><input class="form-control" type=text name=name formControlName="name" /></div>
+        <div class="col-md-4" *ngIf="studentForm.get('name').invalid && studentForm.get('name').touched">
+          Name is Required field.
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Mobile No: </label></div>
+        <div class="col-md-4"><input class="form-control" type=text name=mobileNo formControlName="mobileNo"/></div>        
+        <div class="col-md-4" *ngIf="studentForm.get('mobileNo').invalid && studentForm.get('mobileNo').touched && studentForm.get('mobileNo').errors['required']">
+          Mobile Number is Required field.
+        </div>        
+        <div class="col-md-4" *ngIf="studentForm.get('mobileNo').invalid && studentForm.get('mobileNo').touched && studentForm.get('mobileNo').errors['minlength']">
+          Mobile Number is Min 10 char.
+        </div>                
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Email: </label></div>
+        <div class="col-md-4"><input class="form-control" type=text name=email formControlName="email"/></div>        
+        <div class="col-md-4" *ngIf="studentForm.get('email').invalid && studentForm.get('email').touched && studentForm.get('email').errors['required']">
+          Email is Required field.
+        </div>        
+        <div class="col-md-4" *ngIf="studentForm.get('email').invalid && studentForm.get('email').touched && studentForm.get('email').errors['email']">
+          Invalid Email Address.
+        </div>                
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Course: </label></div>
+        <div class="col-md-4">
+          <select class="form-control" formControlName="course">
+               <option [value]="-1">-:Select Course:-</option>   
+               <option *ngFor="let course of courseList" [ngValue]="course">{{course.courseName}}</option>
+          </select>
+        </div>        
+        <div class="col-md-4" *ngIf="studentForm.get('course').invalid && studentForm.get('course').touched">
+          Course is Required field.
+        </div>                
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Reffered By: </label></div>
+        <div class="col-md-4"><input class="form-control" type=text name=refferedBy formControlName="refferedBy" /></div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-info" [disabled]="studentForm.invalid">Save</button>
+          &nbsp;
+          <button type="button" class="btn btn-default" (click)="reset()">Reset</button>
+        </div>                
+      </div>
+    </form>
+  </div>
+</div>
