@@ -1,0 +1,32 @@
+{
+  "course": [
+    {
+      "id": 1,
+      "courseName": "Angular 7",
+      "duration": "7 Week",
+      "fees": 12000,
+      "trainerName": "keyur"
+    },
+    {
+      "id": 2,
+      "courseName": "JAVA 8",
+      "duration": "5 Week",
+      "fees": 8000,
+      "trainerName": "keyur"
+    },
+    {
+      "id": 3,
+      "courseName": "Big Data",
+      "duration": "8 Week",
+      "fees": 15000,
+      "trainerName": "denish"
+    },
+    {
+      "id": 4,
+      "courseName": "Digital Marketing",
+      "duration": "6 Week",
+      "fees": 10000,
+      "trainerName": "vinit"
+    }
+  ]
+}

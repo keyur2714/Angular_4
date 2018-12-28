@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header bg-warning">Manage Course</div>
+  <div class="card-body bg-dark text-white">
+    <div class="row form-group">     
+      <div class="col">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Course Name</th>
+                <th>Fees</th>
+                <th>Duration</th>
+                <th>Trainer Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let course of courseList">
+                <td>{{course.id}}</td>
+                <td>{{course.courseName}}</td>
+                <td>{{course.fees}}</td>
+                <td>{{course.duration}}</td>
+                <td>{{course.trainerName}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>    
+  </div>
+</div>
