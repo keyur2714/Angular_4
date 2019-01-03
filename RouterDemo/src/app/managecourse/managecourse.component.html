@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col">
+    <button (click)="addCourse()" class="btn btn-info">Add New</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Course Name</th>
+          <th>Fees</th>
+        </tr>        
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courseList">
+          <td><a [routerLink]="['courseDetail',course.id]" [queryParams]="{ trainerName: 'keyur'}">{{course.id}}</a></td>
+          <td>{{course.courseName}}</td>
+          <td>{{course.fees}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>
