@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-6" *ngIf="errorMsg != ''">
+      <div class="alert alert-dangerr">{{errorMsg}}</div>
+    </div>
+    <div class="col-md-6">
+      <table class="table">
+        <tr>
+          <td>Email: </td>
+          <td><input type=text class="form-control" #email/></td>
+        </tr>
+        <tr>
+          <td>Password: </td>
+          <td><input type=text class="form-control" #password/></td>
+        </tr>
+        <tr>
+          <td><button class="btn btn-info" (click)="login(email.value,password.value)">Login</button> </td>          
+        </tr>
+      </table>
+    </div>
+</div>

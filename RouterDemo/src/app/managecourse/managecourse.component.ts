@@ -1,34 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from './course.model';
 import { Router } from '@angular/router';
+import { CourseService } from './course-service';
 @Component({
   selector: 'app-managecourse',
   templateUrl: './managecourse.component.html',
-  styleUrls: ['./managecourse.component.css']
+  styleUrls: ['./managecourse.component.css'],
+  providers : [CourseService]
 })
 export class ManagecourseComponent implements OnInit {
 
-  courseList: Course [] = [
-    {
-      id: 1,
-      courseName: 'Angular',
-      fees: 12000
-    },
-    {
-      id: 2,
-      courseName: 'Java',
-      fees: 8000
-    },
-    {
-      id: 3,
-      courseName: 'Hadoop',
-      fees: 15000
-    }
-  ];
+  courseList: Course [] = [];
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private courseService: CourseService) { }
 
   ngOnInit() {
+    this.courseService.getCourseList().subscribe(
+      (courseList: Course[])=>{
+        this.courseList = courseList;
+      }
+    )
   }
 
   addCourse(){
