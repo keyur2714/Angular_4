@@ -1,0 +1,9 @@
+.approved{
+    color: green;
+}
+.fail{
+    color: red;
+}
+.warning{
+    color: yellow;
+}

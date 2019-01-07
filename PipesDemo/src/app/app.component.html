@@ -1,0 +1,32 @@
+<h1>
+  {{title}}
+</h1>
+<p>
+  {{name | uppercase}}
+</p>
+<p>
+  {{name | uppercase | lowercase}}
+</p>
+<div>
+  <pre>
+    {{emp | json}}
+  </pre>
+</div>
+<p>
+  {{today | date :'dd-MMM-yyyy hh:mm:ss a'}}
+</p>
+<p>
+  {{name | welcome}}
+</p>
+<p>
+  {{numbers | async}}
+</p>
+<p>
+  {{name | iterate : 5 : 'u'}}
+</p>
+<p [ngClass]="'atkt' | convertStatus">
+  {{name | iterate : 3 : 'l'}}
+</p>
+<p [ngClass]="status | convertStatus">
+  {{name | uppercase | iterate : 7}}
+</p>
