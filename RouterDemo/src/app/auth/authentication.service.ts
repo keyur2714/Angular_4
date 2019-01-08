@@ -3,7 +3,8 @@ export class AuthenticationService{
     successUrl : string = 'home';
     authenticate(email:string,password:string):boolean{
         if(email === 'keyurjava27@gmail.com' && password === 'India@123'){
-            this.isAuthenticated = true;            
+            this.isAuthenticated = true;
+            sessionStorage.setItem("token",email+'_sec');            
         }
         return this.isAuthenticated;
     }
@@ -18,5 +19,10 @@ export class AuthenticationService{
     }
     setSuccessUrl(successUrl:string):void{
         this.successUrl = successUrl;
+    }
+
+    signOut():void{
+        this.isAuthenticated = false;
+        sessionStorage.removeItem("token");
     }
 }

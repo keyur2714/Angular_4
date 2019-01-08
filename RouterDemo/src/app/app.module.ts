@@ -6,9 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { ManagecourseComponent } from './managecourse/managecourse.component';
-import { CoursedetailComponent } from './coursedetail/coursedetail.component';
-import { CourseEntryComponent } from './course-entry/course-entry.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SigninComponent } from './signin/signin.component';
 import { SignoutComponent } from './signout/signout.component';
@@ -19,20 +16,21 @@ import { AuthenticationService } from './auth/authentication.service';
     AppComponent,
     HomeComponent,
     ContactusComponent,
-    AboutusComponent,
-    ManagecourseComponent,
-    CoursedetailComponent,
-    CourseEntryComponent,
+    AboutusComponent,    
     SigninComponent,
     SignoutComponent   
   ],
   imports: [
     BrowserModule,
     RouterModule,     
-    HttpClientModule,
-    AppRoutingModule
+    HttpClientModule,        
+    AppRoutingModule        
   ],
   providers: [AuthGuard,AuthenticationService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    console.log("App Module Loaded...");
+  }
+ }

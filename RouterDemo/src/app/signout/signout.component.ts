@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../auth/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signout',
-  templateUrl: './signout.component.html',
-  styleUrls: ['./signout.component.css']
+  template: '',
+  styles: ['']
 })
 export class SignoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authenticationService : AuthenticationService,private router:Router) { }
 
   ngOnInit() {
+    this.authenticationService.signOut();
+    this.router.navigate(['signin']);
   }
 
 }
