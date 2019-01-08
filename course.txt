@@ -18,29 +18,28 @@ Component Communication	-- Done
 	Output
 	ViewChild
 -- Forms --  
-	1. Template Driven Forms
-	2. Reactive Forms--- 
+	1. Template Driven Forms DONE
+	2. Reactive Forms--- DONE
 ======================
 -- DI & Services --
 	1. Dependency Injection -- Done
 	2. Services / Providers -- Done
 
--- local storage/session storage 
+-- local storage/session storage -- remaining
 -- Observable from RXJS -- Done
-	-- operators (map//catch) Done
-	-- switch map
+	-- operators (map//catch//interval) Done
 -- HttpModule -- Done
 --JSON SERVER -- Done	 
--- Routing Module & Routing with --Lazy Loading :: -- Done
+-- Routing Module & Routing with --Lazy Loading :: -- remainingDone
 -- Aunticationn & Authorization 
 	-- Http Interceptor --
 	-- JWT  --
-	-- Routing with guards - -- 
+	-- Routing with guards - -- Done
 ------------Start small project--------
 Pipes Inbuilt & custome pipe -- Done
-Unit Testing -- 
-Animations  --
-Deployments-- how to deploy on server	--
+Unit Testing -- remaining -- 1
+Animations  -- remaining -- 1
+Deployments-- how to deploy on server	-- 
 Angular Material -  
 model popup 		
 
