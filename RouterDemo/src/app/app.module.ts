@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
@@ -11,6 +11,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SignoutComponent } from './signout/signout.component';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AuthenticationService } from './auth/authentication.service';
+import { AuthInterceptor } from './auth/auth-token.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,14 @@ import { AuthenticationService } from './auth/authentication.service';
     HttpClientModule,        
     AppRoutingModule        
   ],
-  providers: [AuthGuard,AuthenticationService],
+  providers: [AuthGuard,
+    AuthenticationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

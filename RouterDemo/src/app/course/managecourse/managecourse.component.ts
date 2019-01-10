@@ -17,6 +17,7 @@ export class ManagecourseComponent implements OnInit {
   ngOnInit() {
     this.courseService.getCourseList().subscribe(
       (courseList: Course[])=>{
+        console.log(courseList+" ===================");
         this.courseList = courseList;
       }
     )

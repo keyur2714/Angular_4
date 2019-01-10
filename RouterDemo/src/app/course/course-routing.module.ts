@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, Router, RouterModule } from '@angular/router';
+import { Routes, Router, RouterModule, NoPreloading } from '@angular/router';
 import { ManagecourseComponent } from './managecourse/managecourse.component';
 import { AuthGuard } from '../auth/auth-guard.service';
 import { CoursedetailComponent } from './coursedetail/coursedetail.component';
@@ -11,11 +11,11 @@ const courseRoutes : Routes = [
         children: [
           {
             path: 'courseDetail/:id',component : CoursedetailComponent
-          },
-          {
-            path : 'coursesEntry' , component: CourseEntryComponent
-          }     
-        ]
+          } 
+        ]        
+      },      
+      {
+        path : 'coursesEntry' , component: CourseEntryComponent
       }  
 ];
 
@@ -23,7 +23,8 @@ const courseRoutes : Routes = [
     declarations: [],
     imports : [
         CommonModule,
-        RouterModule.forChild(courseRoutes)
+        RouterModule.forChild(courseRoutes
+          )
     ],
     exports : [
         RouterModule

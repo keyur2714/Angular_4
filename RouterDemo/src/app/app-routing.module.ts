@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { Routes,RouterModule } from '@angular/router';
+import { Routes,RouterModule, NoPreloading, PreloadingStrategy } from '@angular/router';
 
 import { SigninComponent } from './signin/signin.component';
 import { SignoutComponent } from './signout/signout.component';
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { CourseEntryComponent } from './course/course-entry/course-entry.component';
 const appRoutes: Routes  = [
      {
         path:'home',component:HomeComponent
@@ -24,13 +25,14 @@ const appRoutes: Routes  = [
       },
       {
         path: 'signout', component : SignoutComponent
-      }
+      }  
 ];
 
 @NgModule({
     declarations: [],
     imports: [
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes,
+          {preloadingStrategy : NoPreloading})
     ],
     exports: [
         RouterModule        
