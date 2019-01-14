@@ -33,13 +33,13 @@ Component Communication	-- Done
 -- Routing Module & Routing with --Lazy Loading :: -- Done
 -- Aunticationn & Authorization 
 	-- Http Interceptor -- Done
-	-- JWT  --
+	-- JWT  -- 
 	-- Routing with guards - -- Done
 ------------Start small project--------
 Pipes Inbuilt & custome pipe -- Done
 Unit Testing -- remaining -- 1
 Animations  -- remaining -- 1
-Deployments-- how to deploy on server	-- 
+Deployments-- how to deploy on server	-- Done
 Angular Material -  
 model popup 		
 

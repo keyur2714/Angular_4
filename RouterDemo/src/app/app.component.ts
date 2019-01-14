@@ -14,5 +14,8 @@ export class AppComponent {
   changeRoutes():void{
     this.isLoggedIn = this.authService.getIsAuthenticated();
   }
-  
+ 
+  sum(num1,num2):number{
+    return num1+num2;
+  }
 }
